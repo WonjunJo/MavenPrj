@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.newlecture.web.dao.UnitDao">
+
+	<select id="getList" resultType="com.newlecture.web.entity.Unit">
+		SELECT *
+		FROM newlecture.Unit
+		WHERE chapterId=#{chapterId}
+	</select>
+	
+	<select id="get" resultType="com.newlecture.web.entity.Unit">
+		SELECT *
+		FROM Unit
+		WHERE id=#{id}
+	</select>
+
+
+	<insert id="add" parameterType="com.newlecture.web.entity.Unit">
+		<selectKey order="BEFORE" keyProperty="id" resultType="String">
+			select max(cast(id as unsigned))+1 id from Unit
+		</selectKey>
+		INSERT INTO Unit
+		(`id`,
+		`title`,
+		`vodFile`,
+		`sourceFile`,
+		`docFile`,
+		`introduce`,
+		`duration`,
+		`unitId`,
+		'chapterId')
+		VALUES
+		(#{id },
+		#{title },
+		#{vodFile },
+		#{sourceFile },
+		#{docFile },
+		#{introduce },
+		#{duration },		
+		#{unitId },
+		#{chapterId })
+	</insert>
+
+	<update id="update" parameterType="com.newlecture.web.entity.Unit">
+		UPDATE Chapter
+		SET		
+		`title` = #{title },
+		`vodFile` = #{vodFile },
+		`sourceFile` = #{sourceFile },
+		`docFile` = #{docFile },
+		`introduce` = #{introduce },
+		`duration` = #{duration },
+		`unitId` = #{unitId },
+		`chpaterId` = #{chpaterId }
+		WHERE `id` = #{id}
+
+	</update>
+
+	<delete id="delete">
+		DELETE FROM Unit 
+		WHERE id=#{id}
+	</delete>
+</mapper>

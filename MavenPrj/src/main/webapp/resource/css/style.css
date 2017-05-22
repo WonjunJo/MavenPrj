@@ -1,0 +1,267 @@
+@CHARSET "UTF-8";
+
+/* -- reset -------------------------- */
+body{
+	margin:0px;
+}
+
+ul{
+	margin:0px;
+	padding:0px;
+}
+
+li{
+	display: block;
+}
+
+h1{
+	margin:0px;
+}
+
+/* --- common ------------------------- */
+.hidden{
+	display: none;
+}
+
+/* ---------------------------------- */
+
+#header{	
+	z-index:100;
+	position:fixed;
+	background:#fff;
+	width:100%;
+	top: 0px;
+	
+	display: flex;
+	flex-direction:row;
+	flex-wrap:nowrap;	
+	height: 50px;
+	align-items: center;
+	
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.07);
+	box-sizing: border-box;
+	padding:10px;
+}
+
+#header .content-container{
+	flex-grow:1;
+	text-align: center;
+	
+	display: flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
+#header > h1 img{
+	vertical-align: middle;	
+}
+
+#main-menu{
+	display: none;
+	background: #fff;
+	transition-duration: 500ms;
+	transition-property: height;
+}
+
+#main-menu > ul{
+	display: flex;	
+	line-height: 50px;
+}
+
+#visual{
+	padding-top:50px;
+	height: 100px;
+	background: #313131;
+	
+	overflow: hidden;
+	
+	position: relative;
+	transition-duration: 500ms;
+	transition-property: margin-top;
+}
+
+#visual .banner{
+	height: inherit;
+	
+	display: flex;	
+	width:300%;
+	
+	position:absolute;	
+	left:0px;
+	/* margin-left:-100%; */
+	
+	transition-duration: 1s;
+}
+
+#visual .banner li{	
+	height: inherit;
+	width:100%;
+}
+
+#visual .mov-button{
+	position: absolute;
+	
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	
+	width:100%;
+	height: 100px;
+}
+
+.prev-button{
+	text-indent:-999px;
+	overflow:hidden;
+	
+	width:35px;
+	height:52px;
+	background: url("../images/icon-banner-nav.png") no-repeat -35px center ;
+	
+}
+
+.next-button{
+	text-indent:-999px;
+	overflow:hidden;
+	
+	width:35px;
+	height:52px;
+	background: url("../images/icon-banner-nav.png") no-repeat -105px center ;
+}
+
+#notice{
+	height: 30px;
+	background: #8CBA34;
+}
+
+#lectures{
+	min-height: 600px;
+}
+
+#footer{
+	height: 50px;
+	background: #313131;
+}
+
+
+
+/* --- css ------------------------------- */
+.title{
+	font-size:12px;
+	color:blue;
+}
+
+.list{
+	
+}
+
+.table{
+	
+}
+
+.form{
+	
+}
+
+/* --- component ------------------------------- */
+
+.header{
+	
+}
+
+.test{
+	width:100%;
+	height:100px;
+	background: gray;
+}
+
+.col-left{
+	margin-left:5%;
+}
+
+.col-right{
+	margin-right: 5%;
+}
+
+.col-xs-1{
+	width:25%;
+}
+
+.col-xs-2{
+	width:50%;
+}
+
+.col-xs-3{
+	width:75%;
+}
+
+.col-xs-4{
+	width:100%;
+}
+
+/* ---------------------------------- */
+
+@media all and (min-width:480px) and (max-width:768px){
+	
+	#main-menu{
+		display: block;
+	}
+	
+	.more-vert-button{
+		display: none;
+	}
+			
+	.title{
+		font-size:30px;
+		color:green;
+	}
+		
+	.col-sm-1{
+		width:16.66666666%;
+	}
+	
+	.col-sm-2{
+		width:33.33333333%;
+	}
+	
+	.col-sm-3{
+		width:50%;
+	}
+	
+	.col-sm-4{
+		width:66.66666666%;
+	}
+	
+	.col-sm-5{
+		width:83.33333333%;
+	}
+	
+	.col-sm-6{
+		width:100%;
+	}
+	
+}
+
+@media all and (min-width:768px) and (max-width:1024px){
+	.title{
+		font-size:30px;
+		color:green;
+	}
+}
+
+@media all and (min-width:1024px){
+	.title{
+		font-size:40px;
+		color:pink;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
